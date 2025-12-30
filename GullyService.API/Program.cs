@@ -20,10 +20,22 @@ builder.Services.AddDbContext<GullyDbContext>(options =>
 builder.Services.AddScoped<IGullyService, GullyApplicationService>();
 builder.Services.AddScoped<IGullyRepository, GullyRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDev", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Middleware
 app.UseHttpsRedirection();
+app.UseCors("AllowAngularDev");
 app.UseAuthorization();
 
 if (app.Environment.IsDevelopment())
