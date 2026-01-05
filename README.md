@@ -3,7 +3,7 @@
 This project is a simple **ASP.NET Core 9 Web API** that persists gully configurations created by the Angular frontend.
 
 The application follows **Clean Architecture** principles and applies **Domain-Driven Design (DDD)** to keep domain logic isolated from infrastructure concerns.
-
+This does not include tests or error handling
 ---
 
 ## Technology Stack
