@@ -26,6 +26,7 @@ The solution is structured into clear layers:
 - **Application** – use cases and application services
 - **Infrastructure** – EF Core, database access, persistence
 - **API** – HTTP endpoints and request handling
+- **Application.Tests** – Unit Tests for Application Layer
 
 This separation ensures maintainability, testability, and clear boundaries.
 
