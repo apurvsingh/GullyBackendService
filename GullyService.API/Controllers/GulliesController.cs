@@ -15,14 +15,6 @@ namespace GullyService.API.Controllers
             _gullyService = gullyService;
         }
 
-        // GET: api/gullies
-        //[HttpGet]
-        //public async Task<IActionResult> Index()
-        //{
-        //    var products = await _gullyService.GetAllAsync();
-        //    return Ok(products);
-        //}
-
 
         // POST: api/gullies
         [HttpPost]

@@ -1,3 +1,4 @@
+using GullyService.API.Middleware;
 using GullyService.Application.Abstractions;
 using GullyService.Application.Interfaces;
 using GullyService.Infrastructure.Persistence;
@@ -34,6 +35,7 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Middleware
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.UseCors("AllowAngularDev");
 app.UseAuthorization();
