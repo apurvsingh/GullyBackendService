@@ -27,30 +27,17 @@ namespace GullyService.Application.Abstractions
                 WaterHeight = gullyRequest.WaterHeight
             };
 
-            try
-            {
-                await _gullyRepository.AddAsync(gullyEntity);
+            await _gullyRepository.AddAsync(gullyEntity);
 
-                return new GullyResponse
-                {
-                    Name = gullyEntity.Name,
-                    Height = gullyEntity.Height,
-                    Width = gullyEntity.Width,
-                    PipeHeight = gullyEntity.PipeHeight,
-                    PipeDiameter = gullyEntity.PipeDiameter,
-                    WaterHeight = gullyEntity.WaterHeight,
-                };
-            }
-            catch (Exception ex) 
+            return new GullyResponse
             {
-                return new GullyResponse
-                {
-                    Error = new Error()
-                    {
-                        ErrorMessage = "Failed to save gully details",
-                    }
-                };
-            }
+                Name = gullyEntity.Name,
+                Height = gullyEntity.Height,
+                Width = gullyEntity.Width,
+                PipeHeight = gullyEntity.PipeHeight,
+                PipeDiameter = gullyEntity.PipeDiameter,
+                WaterHeight = gullyEntity.WaterHeight,
+            };
         }
     }
 }

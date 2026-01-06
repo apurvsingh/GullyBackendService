@@ -5,7 +5,7 @@ This project is a simple **ASP.NET Core 9 Web API** that persists gully configur
 The application follows **Clean Architecture** principles and applies **Domain-Driven Design (DDD)** to keep domain logic isolated from infrastructure concerns.
 This includes middleware error handling for unexpected errors
 This also includes graceful error handling for expected errors
-This does not include unit-tests
+This include unit-tests for application layer
 ---
 
 ## Technology Stack
